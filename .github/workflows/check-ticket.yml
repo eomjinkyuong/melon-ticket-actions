@@ -14,7 +14,7 @@ jobs:
       - name: Check Ticket
         uses: mooyoul/melon-ticket-actions@main
         with:
-          product-id: 204755
+          product-id: 211510
           schedule-id: 100001
           seat-id: 1_0
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
