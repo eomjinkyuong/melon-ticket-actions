@@ -1,0 +1,24 @@
+
+.github/workflows/check-ticket.yml
+
+name: Melon Ticket 알림
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 5분마다 실행
+
+jobs:
+  check_ticket:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: 체크 액션 실행
+        uses: mooyoul/melon-ticket-actions@v1.1.0
+        with:
+          product-id: 204755                    # 공연 ID 예시
+          schedule-id: 100001                   # 일정 ID 예시
+          seat-id: 1_0                          # 좌석 ID 예시
+          slack-incoming-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: '🎫 좌석 열렸어요!'
+
+ ㅊ
